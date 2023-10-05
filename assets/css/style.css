@@ -8,42 +8,95 @@
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #2a5360;
-    font-family: 'Montserrat', sans-serif;
+:root {
+    --background: rgba(0, 214, 170, .85);
 }
 
-/* header */
+/* *, *::before, *::after {
+    box-sizing: border-box;
+} */
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column
+}
+
+/* Nav Styles Start */
 header {
-    background-color: #eadbd4;
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 header a {
     text-decoration: none;
-    color: #2a5360;
+    color: inherit;
 }
 
-ul {
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: var(--background);
+    width: 100%;
+    display: none;
+    padding: 1rem 0 0 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
-    padding: 20px;
+    
 }
 
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
 
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
 
-/* main */
+nav a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: black;
+    text-decoration: underline;
+}
+
+.nav-toggle:checked ~ nav {
+    display: block;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+    left: 1rem;
+}
+
 main {
-    background-color: #53aba9;
+    /* Make main content take up any surplus space to push footer down */
     flex: 1 0 auto;
-}
-
-/* footer */
-footer {
-    background-color: #2a5360;
-    color: #ffffff;
+    margin-top: 47px;
 }
